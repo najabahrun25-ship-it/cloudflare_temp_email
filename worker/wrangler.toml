@@ -1,0 +1,24 @@
+name = "cloudflare_temp_email"
+main = "src/worker.ts"
+compatibility_date = "2025-04-01"
+compatibility_flags = [ "nodejs_compat" ]
+keep_vars = true
+
+[vars]
+PREFIX = "tmp"
+DEFAULT_DOMAINS = ["asbin.my.id"]
+DOMAINS = ["asbin.my.id"]
+JWT_SECRET = "xxx"
+BLACK_LIST = ""
+ENABLE_USER_CREATE_EMAIL = true
+ENABLE_USER_DELETE_EMAIL = true
+ENABLE_AUTO_REPLY = false
+
+[[d1_databases]]
+binding = "DB"
+database_name = "temp_email_db"
+database_id = "4ff39caf-8d48-48d1-a4ef-4b47660bbbb7"
+
+[[kv_namespaces]]
+binding = "KV"
+id = "fed4a29c89874076b45784f1b619cb26"
